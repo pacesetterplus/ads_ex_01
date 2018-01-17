@@ -16,6 +16,9 @@ public class MyTest {
 		l.replace("Yusuf", "Razak");
 		System.out.print(l.toString());
 
+		l.reverse();
+		System.out.print(l.toString());
+
 	}
 
 }

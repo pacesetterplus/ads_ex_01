@@ -133,7 +133,18 @@ public class StringList {
 	//
 
 	public StringList reverse() {
-		return new StringList();
+		StringList reverseStringList = new StringList();
+		Node cursor = reverseStringList.getHead();
+		int index = 0;
+		while(index < size) {
+			String s = this.get(index);
+			cursor.setElement(s);
+			cursor = cursor.getNext();
+		
+			index++;
+		}
+		
+		return reverseStringList;
 	}
 	// IMPLEMENT THIS
 	//
@@ -184,6 +195,11 @@ public class StringList {
 
 	public void append(StringList l) {
 		
+		Node cursor = this.head;
+		while(cursor!=null) {
+			l.addFront(this.last().getElement());
+			
+		}
 	}
 	// IMPLEMENT THIS
 	//
