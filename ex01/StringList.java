@@ -193,12 +193,17 @@ public class StringList {
 	//
 
 	public int count(String s) {
-		Node cursor = this.head;
 		int counter = 0;
-		for (int i = 0; i < this.size; i++) {
-			
+		Node cursor = this.head;
+
+		while (cursor != null) {
+			if (cursor.getElement().equals(s)) {
+				counter++;
+			}
+			cursor = cursor.getNext();
+
 		}
-		return -1;
+		return counter;
 	}
 	// IMPLEMENT THIS
 	//
@@ -206,7 +211,16 @@ public class StringList {
 	//
 
 	public int indexOf(String s) {
-		return -999;
+		Node cursor = head;
+		int index = 0;
+		while (cursor != null) {
+			if (cursor.getElement().equals(s)) {
+				return index;
+			}
+			cursor = cursor.getNext();
+			index++;
+		}
+		return -1;
 	}
 	// IMPLEMENT THIS
 	//

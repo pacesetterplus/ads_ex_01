@@ -10,11 +10,11 @@ public class MyTest {
 		l.addFront("Iyabo");
 		l.addFront("Dave");
 		l.addFront("Keshi");
-		l.addFront("Ogunjobi");
+		l.addFront("Yusuf");
 		l.addFront("Olaiya");
 		l.addFront("Barrister");
 		
-		System.out.print(l.last());
+		System.out.print(l.count("Yusuf"));
 
 	}
 
