@@ -164,7 +164,6 @@ public class StringList {
 	//
 
 	public Node last() {
-
 		Node cursor = this.head;
 		int counter = 1;
 		if (this.size == 1) {
@@ -194,6 +193,11 @@ public class StringList {
 	//
 
 	public int count(String s) {
+		Node cursor = this.head;
+		int counter = 0;
+		for (int i = 0; i < this.size; i++) {
+			
+		}
 		return -1;
 	}
 	// IMPLEMENT THIS
