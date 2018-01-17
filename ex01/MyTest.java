@@ -14,7 +14,7 @@ public class MyTest {
 		l.addFront("Olaiya");
 		l.addFront("Barrister");
 		
-		System.out.print(l.get(-8));
+		System.out.print(l.last());
 
 	}
 

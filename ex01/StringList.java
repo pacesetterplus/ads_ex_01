@@ -154,7 +154,6 @@ public class StringList {
 				counter++;
 			}
 		}
-
 		return cursor.getElement();
 	}
 	// IMPLEMENT THIS
@@ -165,7 +164,18 @@ public class StringList {
 	//
 
 	public Node last() {
-		return null;
+
+		Node cursor = this.head;
+		int counter = 1;
+		if (this.size == 1) {
+			return cursor;
+		} else {
+			while (counter != this.size) {
+				cursor = cursor.getNext();
+				counter++;
+			}
+		}
+		return cursor;
 	}
 	// IMPLEMENT THIS
 	//
