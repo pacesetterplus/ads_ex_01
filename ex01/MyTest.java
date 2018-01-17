@@ -13,8 +13,8 @@ public class MyTest {
 		l.addFront("Yusuf");
 		l.addFront("Olaiya");
 		l.addFront("Barrister");
-		
-		System.out.print(l.count("Yusuf"));
+		l.replace("Yusuf", "Razak");
+		System.out.print(l.toString());
 
 	}
 

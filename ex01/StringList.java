@@ -183,6 +183,7 @@ public class StringList {
 	//
 
 	public void append(StringList l) {
+		
 	}
 	// IMPLEMENT THIS
 	//
@@ -228,7 +229,13 @@ public class StringList {
 	// the index of the first occurrence of s in the list
 	//
 
-	public void replace(String s1, String s2) {
+	public void replace(String s1, String s2) {		
+		Node cursor = this.head;
+		while (cursor != null) {
+			if (cursor.getElement().equals(s1)) {
+				cursor.setElement(s2);			}
+			cursor = cursor.getNext();
+		}
 	}
 	// IMPLEMENT ME
 	//
