@@ -124,6 +124,20 @@ public class StringList {
 	//
 
 	public boolean equal(StringList l) {
+		if (this.size == l.size()) {
+			Node cursor = this.head;
+			Node otherCursor = l.getHead();
+			while (cursor != null) {
+				if (cursor.getElement().equals(otherCursor.getElement())) {
+					cursor = cursor.getNext();
+					otherCursor = otherCursor.getNext();
+				} else {
+					return false;
+				}
+
+			}
+			return true;
+		}
 		return false;
 	}
 	// IMPLEMENT THIS
@@ -132,26 +146,34 @@ public class StringList {
 	// contain the same elements in the same order
 	//
 
+	/**
+	 * 
+	 * @return a StringList, the reverse of this StringList
+	 */
 	public StringList reverse() {
-		StringList reverseStringList = new StringList();
-		Node cursor = reverseStringList.getHead();
-		int index = 0;
-		while(index < size) {
-			String s = this.get(index);
-			cursor.setElement(s);
+		StringList strList = new StringList();
+		Node cursor = this.head;
+		while (cursor != null) {
+			strList.addFront(cursor.getElement());
 			cursor = cursor.getNext();
-		
-			index++;
 		}
-		
-		return reverseStringList;
+		return strList;
 	}
+
 	// IMPLEMENT THIS
 	//
 	// l.reverse() delivers a new StringList that has the
 	// the elements of l in reverse order
 	//
 
+	/**
+	 * If i is negative or i is greater than or equal to l.size() returns "".
+	 * 
+	 * @param i,
+	 *            an integer
+	 * @return the String at the specified index.
+	 * 
+	 */
 	public String get(int i) {
 		Node cursor = this.head;
 		int counter = 0;
@@ -174,17 +196,16 @@ public class StringList {
 	// Note: l.get(0) delivers the 1st element of the list (if there is one)
 	//
 
+	/**
+	 * 
+	 * @return the last node in this StringList.
+	 */
 	public Node last() {
 		Node cursor = this.head;
-		int counter = 1;
-		if (this.size == 1) {
-			return cursor;
-		} else {
-			while (counter != this.size) {
-				cursor = cursor.getNext();
-				counter++;
-			}
+		while (cursor != null & cursor.getNext() != null) {
+			cursor = cursor.getNext();
 		}
+
 		return cursor;
 	}
 	// IMPLEMENT THIS
@@ -193,12 +214,19 @@ public class StringList {
 	// Note: this might be used when appending lists
 	//
 
+	/**
+	 * Append a given StringList to this StringList. The last node in this list
+	 * points to the head of 'l', the list to append.
+	 * 
+	 * @param l,
+	 *            the StringList to append to this StringList.
+	 */
 	public void append(StringList l) {
-		
-		Node cursor = this.head;
-		while(cursor!=null) {
-			l.addFront(this.last().getElement());
-			
+		StringList lReverse = this.reverse(); // reverse this list
+		Node cursor = lReverse.head;
+		while (cursor != null) {
+			l.addFront(cursor.getElement());
+			cursor = cursor.getNext();
 		}
 	}
 	// IMPLEMENT THIS
@@ -209,6 +237,13 @@ public class StringList {
 	// You should investigate the consequences of this
 	//
 
+	/**
+	 * Returns the an integer representing the number of times a string 's' occurs
+	 * in this StringList.
+	 * 
+	 * @param s
+	 * @return number of occurrences as an integer.
+	 */
 	public int count(String s) {
 		int counter = 0;
 		Node cursor = this.head;
@@ -222,11 +257,17 @@ public class StringList {
 		}
 		return counter;
 	}
+
 	// IMPLEMENT THIS
 	//
 	// l.count(s) returns the number of times s occurs in l
 	//
-
+	/**
+	 * returns the index of the first occurrence of s.
+	 * 
+	 * @param s
+	 * @return -1 if s is not in the list.
+	 */
 	public int indexOf(String s) {
 		Node cursor = head;
 		int index = 0;
@@ -245,11 +286,18 @@ public class StringList {
 	// the index of the first occurrence of s in the list
 	//
 
-	public void replace(String s1, String s2) {		
+	/**
+	 * Replaces all occurrences of s1 with s2
+	 * 
+	 * @param s1
+	 * @param s2
+	 */
+	public void replace(String s1, String s2) {
 		Node cursor = this.head;
 		while (cursor != null) {
 			if (cursor.getElement().equals(s1)) {
-				cursor.setElement(s2);			}
+				cursor.setElement(s2);
+			}
 			cursor = cursor.getNext();
 		}
 	}

@@ -13,11 +13,19 @@ public class MyTest {
 		l.addFront("Yusuf");
 		l.addFront("Olaiya");
 		l.addFront("Barrister");
-		l.replace("Yusuf", "Razak");
-		System.out.print(l.toString());
+		
+		
+		StringList l2 = new StringList();
+		l2.addFront("Yusuf");
+		l2.addFront("Ubaid");
+		l2.addFront("Zahra");
+		l2.addFront("Mike");
+		
+		l.append(l2);
+	
+		System.out.print(l);
 
-		l.reverse();
-		System.out.print(l.toString());
+	
 
 	}
 
