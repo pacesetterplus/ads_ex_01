@@ -16,10 +16,10 @@ public class MyTest {
 		
 		
 		StringList l2 = new StringList();
-		l2.addFront("Yusuf");
-		l2.addFront("Ubaid");
-		l2.addFront("Zahra");
-		l2.addFront("Mike");
+		l2.addFront("Yus");
+		l2.addFront("Uba");
+		l2.addFront("Za");
+		l2.addFront("Mi");
 		
 		l.append(l2);
 	

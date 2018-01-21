@@ -222,12 +222,15 @@ public class StringList {
 	 *            the StringList to append to this StringList.
 	 */
 	public void append(StringList l) {
-		StringList lReverse = this.reverse(); // reverse this list
-		Node cursor = lReverse.head;
-		while (cursor != null) {
-			l.addFront(cursor.getElement());
+		Node cursor = this.last(); // last node of this list
+ 		Node otherCursor = l.getHead(); // pointer to beginning of l list
+		while (otherCursor != null) {
+			cursor.setNext(otherCursor);
 			cursor = cursor.getNext();
+			System.out.println(cursor.getElement());
+			otherCursor = otherCursor.getNext(); // advanced otherCursor to the next head.
 		}
+
 	}
 	// IMPLEMENT THIS
 	//
